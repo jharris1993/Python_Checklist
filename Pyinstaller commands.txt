@@ -1,0 +1,5 @@
+As admin
+pyinstaller --onefile --noconsole --uac-admin Checklist.py
+
+As standard user, (no admin)
+pyinstaller --onefile --noconsole Checklist.py
