@@ -5,7 +5,7 @@ import pickle
 import os
 
 # Constants for storing window position
-POSITION_FILE = "window_position.pkl"
+POSITION_FILE = "Checklist.py.pkl"
 
 # Function to save window position
 def save_window_position(window):
