@@ -57,8 +57,8 @@ def create_checklist_window(title, checklist_title, checklist_items, external_pr
     checklist_vars = []
     for item in checklist_items:
         var = tk.BooleanVar()
-        checkbox = tk.Checkbutton(frame, text=item, variable=var, command=update_continue_button)
-        checkbox.pack(anchor="w", pady=2)
+        checkbox = tk.Checkbutton(frame, text=item, variable=var, command=update_continue_button, wraplength=400, anchor="w", justify="left")
+        checkbox.pack(fill="x", padx=10, pady=5)
         checklist_vars.append(var)
 
     # Continue and Cancel buttons (added Cancel)
@@ -77,7 +77,7 @@ def create_checklist_window(title, checklist_title, checklist_items, external_pr
 
     # Resize window to fit content
     root.update_idletasks()
-    root.minsize(root.winfo_width(), root.winfo_height())
+    root.minsize(root.winfo_reqwidth(), root.winfo_reqheight())
 
     # Run the main event loop
     root.protocol("WM_DELETE_WINDOW", lambda: (save_window_position(root), root.destroy()))
@@ -85,18 +85,14 @@ def create_checklist_window(title, checklist_title, checklist_items, external_pr
 
 if __name__ == "__main__":
     window_title = "Flight Simulator 2020 Checklist"
-    checklist_window_title = "Verify the following\nbefore proceeding:"
+    checklist_window_title = "MSFS 2020 Pre-Start\nCHECKLIST VERIFICATION:"
     items = [
-        "Check the power supply",
-        "Ensure the network cable is connected",
-        "Verify software installation",
-        "Update antivirus definitions",
-        "Run system diagnostics",
-        "Review error logs",
-        "Test application functionality",
-        "Backup critical files",
-        "Notify the team of changes",
-        "Confirm system reboot"   # last line doesn't get a comma
+        "Move the keyboard out of the way.",
+        "Verify that all cables are firmly attached\nto their respective controller's connectors.",
+        "Verify that no cables are resting on the keyboard.",
+        "Move all axis and trim controls to reduce noise.",
+        "Verify that all trim controls are centered.",
+        "Verify that the throttle has been pulled\nall the way back to the stop."     # last line doesn't get a comma
     ]
     external_program_path = "C:\XboxGames\Microsoft Flight Simulator\Content\FlightSimulator.exe"  # Change to your program's path
 

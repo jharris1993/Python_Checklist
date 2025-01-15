@@ -1,5 +1,5 @@
 As admin
-pyinstaller --onefile --noconsole --uac-admin Checklist.py
+pyinstaller --clean --onefile --noconsole --uac-admin --icon=Logo.ico Checklist.py
 
 As standard user, (no admin)
-pyinstaller --onefile --noconsole Checklist.py
+pyinstaller --clean --onefile --noconsole --icon=Logo.ico Checklist.py
